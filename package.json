@@ -1,0 +1,13 @@
+{
+  "name": "destinize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "tailwindcss build -i public/css/tailwind.css -o public/style.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

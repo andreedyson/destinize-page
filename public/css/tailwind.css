@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .accordion-container.open {
+        @apply bg-[#F6F6F6]
+    }
+
+    .accordion-header,
+    .accordion-header > *,
+    .accordion-container {
+        @apply transition-all duration-500 ease-in-out
+    }
+
+    .accordion-header.active p {
+        @apply text-lightblue text-xs lg:text-sm
+    }
+
+    .accordion-header.accordion-header.active i {
+        @apply rotate-180 text-white bg-mainblue
+    }
+
+    .accordion-header.borderleft {
+        @apply border-s-4 border-lightblue
+    }
+
+    .accordion-content.active {
+        @apply block
+    }
+}

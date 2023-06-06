@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="public/img/main/logo_img.png" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <title>Destinize - Travel Page</title>
+  </head>
+  <body class="font-jakarta container max-w-[2000px] mx-auto">
+    <!-- Navigation Container -->
+    <header class="px-[22px] py-3 shadow-md xl:p-main xl:mx-auto">
+      <nav class="flex items-center justify-between">
+        <!-- Logo Link/Container -->
+        <a
+          href="#"
+          class="block focus:outline-none focus:ring-4 focus:ring-offset-mainblue focus:rounded-md"
+        >
+          <img
+            src="public/img/main/Logo.png"
+            alt="Destinize Logo"
+            class="w-20 md:w-24 lg:w-28"
+          />
+        </a>
+        <!-- SearchBar Container -->
+        <div class="hidden md:flex">
+          <form name="search" id="search">
+            <!-- Icon Wrapper -->
+            <div class="relative flex items-center">
+              <img
+                src="public/img/icons/search.png"
+                alt=""
+                class="absolute ml-[22px] pointer-events-none"
+              />
+              <input
+                type="text"
+                placeholder="Cari apapun disini..."
+                autocomplete="off"
+                class="py-2 pl-12 w-auto bg-inputfield rounded-full text-xs md:w-[530px] md:py-3 lg:py-4 focus:ring-gray-500"
+              />
+            </div>
+          </form>
+        </div>
+        <!-- Language Container -->
+        <div class="hidden 2xl:flex">
+          <div>
+            <img src="public/img/icons/globe.png" alt="" />
+          </div>
+          <select name="language" id="language" class="cursor-pointer">
+            <option value="id" selected>Bahasa Indonesia</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <!-- Location Container -->
+        <div class="hidden lg:flex md:gap-3">
+          <div
+            class="hidden items-center p-[14px] bg-secondblue rounded-full lg:flex"
+          >
+            <img src="public/img/icons/location.png" alt="" />
+          </div>
+          <div>
+            <p class="text-xs">Lokasi</p>
+            <select
+              name="location"
+              id="location"
+              class="font-extrabold cursor-pointer text-mainblue"
+            >
+              <option value="yg">Indonesia, Yogyakarta</option>
+            </select>
+          </div>
+        </div>
+        <!-- Hamburger Menu -->
+        <div
+          class="flex flex-col items-center justify-around w-8 h-6 lg:hidden"
+          id="hamb"
+        >
+          <span class="block w-[80%] h-[3px] bg-links"></span>
+          <span class="block w-[80%] h-[3px] bg-links"></span>
+          <span class="block w-[80%] h-[3px] bg-links"></span>
+        </div>
+      </nav>
+      <div
+        class="hidden absolute top-10 left-0 bg-white w-[100%] shadow-inner md:top-16"
+        id="linklist"
+      >
+        <div class="flex flex-col items-center gap-10 py-6 text-sm font-bold">
+          <a href="">Explore</a>
+          <a href="">Language</a>
+          <a href="">Location</a>
+        </div>
+        <div class="bg-black/30 h-[100vh]"></div>
+      </div>
+    </header>
+    <!-- Navigation Links Container -->
+    <div
+      class="hidden lg:flex items-center justify-between px-[22px] py-3 xl:p-main xl:mx-auto"
+    >
+      <div class="flex gap-10">
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Gunung<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Pantai<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Kuliner<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Outbond<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Sejarah<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Edukasi<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Romantis<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+        <a href="#" class="text-sm text-links hover:text-mainblue"
+          >Alam<i class="ml-2 fa-solid fa-angle-down"></i
+        ></a>
+      </div>
+      <div class="flex gap-2">
+        <a
+          href=""
+          class="flex p-[14px] rounded-full bg-mainblue text-white transition hover:bg-secondblue hover:text-mainblue"
+          ><i class="fa-solid fa-shopping-bag"></i
+        ></a>
+        <a
+          href=""
+          class="flex p-[14px] rounded-full bg-secondblue text-mainblue transition hover:bg-mainblue hover:text-secondblue"
+          ><i class="fa-solid fa-user"></i
+        ></a>
+      </div>
+    </div>
+    <main class="px-[22px] py-3 xl:p-main xl:mx-auto">
+      <!-- Hero Section -->
+      <section
+        class="flex flex-col-reverse justify-between mt-4 md:flex-col xl:mt-11 xl:flex-row"
+      >
+        <div
+          class="flex flex-col items-center mt-5 xl:min-w-[660px] xl:items-start"
+        >
+          <span
+            class="px-6 py-2.5 mb-3 text-mainblue text-xs font-bold bg-secondblue rounded-full xl:text-sm"
+            >✈ • Explore the wonderful indonesia!</span
+          >
+          <h1
+            class="mb-4 text-3xl text-center font-extrabold md:4xl lg:text-5xl xl:mb-7 xl:max-w-[658px] xl:text-start xl:text-[76px]/[89px]"
+          >
+            Liburan & nikmati <span class="text-mainblue">tempat baru</span> di
+            Indonesia 🏝
+          </h1>
+          <p
+            class="mb-8 text-sm text-body text-center max-w-[477px] md:text-sm xl:text-start xl:text-base"
+          >
+            Destinize membuat kamu selalu update terkait tempat liburan baru di
+            Indonesia dengan mengikuti perkembangan para influencer di sosial
+            media ✨
+          </p>
+          <div class="flex flex-col items-center gap-6 xl:flex-row xl:gap-10">
+            <button
+              class="px-2.5 py-4 bg-mainblue rounded-[10px] font-bold text-sm text-white transition hover:bg-transparent hover:text-mainblue hover:outline-none hover:ring-2 hover:ring-offset-mainblue xl:px-5 xl:text-base"
+            >
+              Mulai Sekarang →
+            </button>
+            <a
+              href=""
+              class="flex items-center gap-4 text-sm font-bold text-body lg:text-base hover:text-mainblue"
+              ><i
+                class="text-mainblue px-3 py-2.5 border-2 border-mainblue rounded-full transition lg:px-4 lg:py-3.5 hover:text-white hover:bg-mainblue fa-solid fa-play"
+              ></i
+              >Putar Demo</a
+            >
+          </div>
+        </div>
+        <img
+          src="public/img/main/main-hero.png"
+          alt=""
+          class="max-w-[696px] object-contain md:max-xl:mx-auto lg:max-2xl:overflow-x-hidden xl:-ml-10"
+        />
+      </section>
+      <!-- Brand Section -->
+      <section class="grid place-items-center mt-28 xl:grid-cols-5">
+        <img
+          src="public/img/brand/axon.png"
+          alt=""
+          class="aspect-[2/1] object-contain cursor-pointer grayscale xl:aspect-[3/2] xl:w-[70%] hover:grayscale-0"
+        />
+        <img
+          src="public/img/brand/jetstar.png"
+          alt=""
+          class="aspect-[2/1] object-contain cursor-pointer grayscale xl:aspect-[3/2] xl:w-[70%] hover:grayscale-0"
+        />
+        <img
+          src="public/img/brand/expedia.png"
+          alt=""
+          class="aspect-[2/1] object-contain cursor-pointer grayscale xl:aspect-[3/2] xl:w-[70%] hover:grayscale-0"
+        />
+        <img
+          src="public/img/brand/qantas.png"
+          alt=""
+          class="hidden aspect-[2/1] object-contain cursor-pointer grayscale xl:block xl:aspect-[3/2] xl:w-[70%] hover:grayscale-0"
+        />
+        <img
+          src="public/img/brand/alltalia.png"
+          alt=""
+          class="hidden aspect-[2/1] object-contain cursor-pointer grayscale xl:block xl:aspect-[6/1] xl:w-[70%] hover:grayscale-0"
+        />
+      </section>
+      <!-- Destinasi Section -->
+      <section class="flex flex-col mt-20 xl:mt-36">
+        <div class="flex flex-col gap-3">
+          <span
+            class="block text-sm font-bold text-center uppercase text-mainblue md:text-base xl:text-start xl:text-lg xl:mb-3"
+            >Destinasi Favorit</span
+          >
+          <div
+            class="flex flex-col items-center justify-between gap-3 xl:flex-row"
+          >
+            <h2
+              class="text-3xl font-bold text-center md:text-4xl lg:text-start xl:text-5xl"
+            >
+              ✈ • Temukan Destinasi Favoritmu
+            </h2>
+            <a href="#" class="font-bold text-mainblue"
+              >Lihat Semua <i class="fa-solid fa-angle-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="grid mt-12 gap-7 lg:grid-cols-2 xl:grid-cols-4">
+          <div
+            class="relative bg-no-repeat bg-cover bg-center min-h-[150px] cursor-pointer ease-in-out duration-500 rounded-xl md:hover:scale-105 xl:min-h-[392px] 2xl:aspect-[3/5]"
+            style="background-image: url('public/img/view/rajaampat.jpg')"
+          >
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm bg-white/70 rounded-tr-md xl:items-start xl:inset-auto xl:bottom-0 xl:px-5 xl:py-2"
+            >
+              <p class="text-2xl font-bold xl:text-lg">Raja Ampat</p>
+              <p class="font-medium text-body">Papua</p>
+            </div>
+          </div>
+          <div
+            class="relative bg-no-repeat bg-cover bg-center min-h-[150px] cursor-pointer ease-in-out duration-500 rounded-xl md:hover:scale-105 xl:min-h-[392px] 2xl:aspect-[3/5]"
+            style="background-image: url('public/img/view/labuanbajo.jpg')"
+          >
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm bg-white/70 rounded-tr-md xl:items-start xl:inset-auto xl:bottom-0 xl:px-5 xl:py-2"
+            >
+              <p class="text-2xl font-bold xl:text-lg">Labuan Bajo</p>
+              <p class="font-medium text-body">NTT</p>
+            </div>
+          </div>
+          <div
+            class="relative bg-no-repeat bg-cover bg-center min-h-[150px] cursor-pointer ease-in-out duration-500 rounded-xl md:hover:scale-105 xl:min-h-[392px] 2xl:aspect-[3/5]"
+            style="background-image: url('public/img/view/kawahijen.jpg')"
+          >
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm bg-white/70 rounded-tr-md xl:items-start xl:inset-auto xl:bottom-0 xl:px-5 xl:py-2"
+            >
+              <p class="text-2xl font-bold xl:text-lg">Kawah Ijen</p>
+              <p class="font-medium text-body">Jawa Timur</p>
+            </div>
+          </div>
+          <div
+            class="relative bg-no-repeat bg-cover bg-center min-h-[150px] cursor-pointer ease-in-out duration-500 rounded-xl md:hover:scale-105 xl:min-h-[392px] 2xl:aspect-[3/5]"
+            style="background-image: url('public/img/view/bromo.jpg')"
+          >
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm bg-white/70 rounded-tr-md xl:items-start xl:inset-auto xl:bottom-0 xl:px-5 xl:py-2"
+            >
+              <p class="text-2xl font-bold xl:text-lg">Bromo</p>
+              <p class="font-medium text-body">Jawa Timur</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Reservasi Section -->
+      <section
+        class="flex flex-col items-center justify-between mt-20 xl:mt-28 xl:flex-row"
+      >
+        <div class="flex flex-col gap-8 max-w-[548px]">
+          <div class="flex flex-col gap-3">
+            <span
+              class="block text-sm font-bold text-center uppercase text-mainblue md:text-base xl:text-start xl:text-lg xl:mb-3"
+              >Reservasi Tempat</span
+            >
+            <h2
+              class="text-3xl font-bold text-center md:text-4xl xl:text-start xl:text-5xl"
+            >
+              Gak mau ngantri? Reservasi aja!🤙🏻
+            </h2>
+          </div>
+          <div class="flex flex-col gap-6 xl:gap-14">
+            <div class="flex flex-col items-center gap-2 xl:flex-row xl:gap-5">
+              <i
+                class="p-6 bg-iconbox rounded-xl fa-solid fa-magnifying-glass"
+              ></i>
+              <div class="max-w-[351px] text-center xl:text-start">
+                <p class="text-base font-bold text-body md:text-xl">
+                  Cari tempat yang kamu mau
+                </p>
+                <p class="text-sm text-body md:text-base">
+                  Temukan destinasi selanjutnya yang akan kamu kunjungi dalam
+                  Destinize
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center gap-2 xl:flex-row xl:gap-5">
+              <i class="p-6 bg-iconbox rounded-xl fa-solid fa-pencil"></i>
+              <div class="max-w-[351px] text-center xl:text-start">
+                <p class="text-base font-bold text-body md:text-lg">
+                  Isi data dan konfirmasi pembayaran
+                </p>
+                <p class="text-sm text-body md:text-base">
+                  Tulis dan lengkapi data kamu untuk keperluan data booking
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center gap-2 xl:flex-row xl:gap-5">
+              <i class="p-6 bg-iconbox rounded-xl fa-solid fa-grin-hearts"></i>
+              <div class="max-w-[351px] text-center xl:text-start">
+                <p class="text-base font-bold text-body md:text-lg">
+                  Tinggal masuk dan enjoy
+                </p>
+                <p class="text-sm text-body md:text-base">
+                  Kamu bisa langsung masuk dan enjoy liburan kamu tanpa hambatan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            src="public/img/main/reserve.png"
+            alt=""
+            class="block max-w-full"
+          />
+        </div>
+      </section>
+      <!-- Tempat Wisata Section -->
+      <section class="flex flex-col gap-12">
+        <div class="flex flex-col items-center gap-3 text-center">
+          <span
+            class="block text-sm font-bold uppercase text-mainblue md:text-base xl:text-lg"
+            >Cari Tempat Wisata</span
+          >
+          <h2 class="text-3xl font-bold md:text-4xl xl:text-5xl">
+            🗺 • Cari Tempat Wisata Didekatmu
+          </h2>
+          <p class="md:max-w-[820px]">
+            Fitur ini memungkinkan kamu untuk mencari tempat wisata atau tempat
+            yang sedang populer di daerah kamu dengan begitu kamu akan selalu
+            update dan gak kudet lagi 👍🏻
+          </p>
+        </div>
+        <img src="public/img/view/map.png" alt="" class="block max-w-full" />
+        <div class="flex flex-col justify-between gap-4 lg:flex-row">
+          <div
+            class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-start"
+          >
+            <i
+              class="p-5 rounded-full bg-iconbox2 fa-solid fa-location-dot"
+            ></i>
+            <div class="max-w-[294px]">
+              <p class="text-base font-bold lg:text-lg xl:text-xl">
+                Populer di dekatmu
+              </p>
+              <p class="text-sm xl:text-base">
+                Tempat pariwisata yang populer dan pasti dikenal semua orang
+                didekatmu
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-start"
+          >
+            <i class="p-5 rounded-full bg-iconbox2 fa-solid fa-heart"></i>
+            <div class="max-w-[294px]">
+              <p class="text-base font-bold lg:text-lg xl:text-xl">
+                Favorit di dekatmu
+              </p>
+              <p class="text-sm xl:text-base">
+                Tempat favorit dan disukai semua orang orang di sekitar daerah
+                kamu
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-start"
+          >
+            <i class="p-5 rounded-full bg-iconbox2 fa-solid fa-users"></i>
+            <div class="max-w-[294px]">
+              <p class="text-base font-bold lg:text-lg xl:text-xl">
+                Ramai di dekatmu
+              </p>
+              <p class="text-sm xl:text-base">
+                Spot yang paling ramai dikunjungi para warga sekaligus para
+                wisatawan
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Galeri Section -->
+      <section class="mt-20 xl:mt-28">
+        <div class="flex flex-col gap-3">
+          <span
+            class="block text-sm font-bold text-center uppercase text-mainblue md:text-base xl:text-start xl:text-lg xl:mb-3"
+            >Mengenal Destinize</span
+          >
+          <div
+            class="flex flex-col items-center justify-between gap-3 xl:flex-row"
+          >
+            <h2
+              class="text-3xl font-bold text-center md:text-4xl lg:text-start xl:text-5xl"
+            >
+              🖼• Galeri Pariwisata & Blog Travel
+            </h2>
+            <a href="#" class="font-bold text-mainblue"
+              >Lihat Semua <i class="fa-solid fa-angle-right"></i
+            ></a>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-y-8 mt-14 lg:grid-cols-4 lg:gap-x-11 lg:gap-y-9"
+        >
+          <!--Gallery Blog Container -->
+          <div class="rounded-lg shadow-2xl">
+            <div>
+              <img
+                src="public/img/view/gallery1.jpg"
+                alt=""
+                class="block w-full bg-cover rounded-t-lg"
+              />
+            </div>
+            <div class="flex flex-col gap-4 px-6 py-5">
+              <span class="text-sm uppercase text-body">26 Desember 2022</span>
+              <p class="font-bold">
+                Tips naik gunung Bromo Biar gak capek cyin 😥😛
+              </p>
+              <p class="text-sm text-body">
+                Jadi gini gann, anda tau bromo? yaaa gunung kann!
+              </p>
+              <a href="#" class="font-bold tetx-sm text-mainblue"
+                >Baca selengkapnya...</a
+              >
+            </div>
+          </div>
+          <!-- Gallery Video Container -->
+          <div
+            class="relative flex items-center justify-center w-full h-[150px] bg-cover rounded-lg lg:h-auto lg:col-span-3 xl:col-span-3 isolate before:content-[''] before:absolute before:bg-black/30 before:inset-0 before:z-[-1]"
+            style="background-image: url('public/img/view/galleryvideo.jpg')"
+          >
+            <i
+              class="p-9 bg-mainblue rounded-full text-white text-[24px] cursor-pointer transition hover:bg-mainblue/80 fa-solid fa-play"
+            ></i>
+          </div>
+          <!-- Gallery Bottom Container -->
+          <div
+            class="relative flex flex-col gap-4 px-5 py-6 xl:w-full bg-no-repeat bg-cover bg-center text-white rounded-lg isolate before:content-[''] before:absolute before:bg-black/50 before:inset-0 before:z-[-1] lg:col-span-4"
+            style="background-image: url('public/img/view/gallery2.jpg')"
+          >
+            <h3 class="text-2xl font-bold">
+              Tips meminum air kawah biar lidah melepuh 😁
+            </h3>
+            <p class="lg:w-[695px]">
+              Lidah melepuh? why nott, kawah bukan untuk dilihat kawan.. tapi
+              untuk di minum.. rasakan kepanasan yang brutal 🔥
+            </p>
+            <div class="flex gap-4 text-xs">
+              <p>Google</p>
+              <p>Trending</p>
+              <p>Baru</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonial Section -->
+      <section class="mt-20 xl:mt-28">
+        <!-- Title Container -->
+        <div class="flex flex-col items-center gap-3 text-center">
+          <span
+            class="block text-sm font-bold uppercase text-mainblue md:text-base xl:text-lg"
+            >Testimonial Destinize</span
+          >
+          <h2 class="text-3xl font-bold md:text-4xl xl:text-5xl">
+            💬 • Apa Kata Mereka Tentang Kami
+          </h2>
+          <p class="md:max-w-[820px]">
+            Penasaran apa saja review dari pengguna yang memakai aplikasi dan
+            website Destinize buat nentuin kemana liburan mereka selanjutnya?
+            Yuk cek dibawah!
+          </p>
+        </div>
+        <!--Testi Card Container -->
+        <div class="grid grid-cols-1 gap-8 mt-14 lg:grid-cols-3 lg:gap-14">
+          <div
+            class="flex flex-col items-center justify-center gap-4 py-10 border-2 rounded-md shadow-2xl px-14 border-slate-300"
+          >
+            <img
+              src="public/img/testimonials/circle-box circle-xl mx-auto.png"
+              alt=""
+            />
+            <p class="text-sm font-medium text-center lg:text-base">
+              Destinize membantu saya mencari spot tempat wisata baru di
+              Indonesia dengan mudah.
+            </p>
+            <div>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-700 fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs font-bold text-lightblue lg:text-sm">
+              Sandhika Galih
+            </p>
+            <p class="text-xs font-semibold text-bodydark lg:text-sm">
+              Dosen WPU
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center gap-4 py-10 border-2 rounded-md shadow-2xl px-14 border-slate-300"
+          >
+            <img
+              src="public/img/testimonials/circle-box circle-xl mx-auto-1.png"
+              alt=""
+            />
+            <p class="text-sm font-medium text-center lg:text-base">
+              Destinize membantu saya mendapatkan jodoh, tidak disangka bahwa
+              jodoh saya adalah CS nya
+            </p>
+            <div>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-700 fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs font-bold text-lightblue lg:text-sm">
+              Syauqizaidan Khairan Khalaf
+            </p>
+            <p class="text-xs font-semibold text-bodydark lg:text-sm">
+              Mahasiswa
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center gap-4 py-10 border-2 rounded-md shadow-2xl px-14 border-slate-300"
+          >
+            <img
+              src="public/img/testimonials/circle-box circle-xl mx-auto-2.png"
+              alt=""
+            />
+            <p class="text-sm font-medium text-center lg:text-base">
+              Bikini Bottom menjadi sangat ramai dikunjungi saat saya
+              memasukkannya di Destinize
+            </p>
+            <div>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-500 fa-solid fa-star"></i>
+              <i class="text-yellow-700 fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs font-bold text-lightblue lg:text-sm">
+              Patrick Sesat
+            </p>
+            <p class="text-xs font-semibold text-bodydark lg:text-sm">
+              Warga Bikini Bottom
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section class="mt-20 xl:mt-28">
+        <div class="flex flex-col gap-3">
+          <span
+            class="block text-sm font-bold text-center uppercase text-mainblue md:text-base xl:text-start xl:text-lg xl:mb-3"
+            >Frequently Asked Question</span
+          >
+          <div
+            class="flex flex-col items-center justify-between gap-3 xl:flex-row"
+          >
+            <h2
+              class="text-3xl font-bold text-center md:text-4xl lg:text-start xl:text-5xl"
+            >
+              🤔• Pertanyaan yang Sering Diajukan
+            </h2>
+            <a href="#" class="font-bold text-mainblue"
+              >Lihat Semua <i class="fa-solid fa-angle-right"></i
+            ></a>
+          </div>
+          <!-- Accordion Container -->
+          <div class="mt-8 divide-y-2 lg:mt-14">
+            <!-- Accordion Item -->
+            <div class="flex flex-col gap-4 cursor-pointer accordion-container">
+              <div
+                class="accordion-header flex items-center justify-between px-3 py-2.5 lg:px-6 lg:py-5"
+              >
+                <p
+                  class="text-sm font-bold text-bodydark md:text-sm lg:text-base"
+                >
+                  Kenapa ya pembayaranku gagal?
+                </p>
+                <i
+                  class="p-2 border-2 rounded-full icon-down text-bodydark border-bodydark2 fa-solid fa-angle-down"
+                ></i>
+              </div>
+              <div class="accordion-content hidden px-3 pb-2.5 lg:px-6 lg:pb-5">
+                <p class="text-sm md:text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                  ullam, illo natus cum, odio aperiam accusantium facilis
+                  quisquam est iusto illum laudantium sequi assumenda placeat
+                  commodi enim quod autem repellat!
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div class="flex flex-col gap-4 cursor-pointer accordion-container">
+              <div
+                class="accordion-header flex items-center justify-between px-3 py-2.5 lg:px-6 lg:py-5"
+              >
+                <p
+                  class="text-sm font-bold text-bodydark md:text-sm lg:text-base"
+                >
+                  Apakah Andre CEO dari Destinize?
+                </p>
+                <i
+                  class="p-2 border-2 rounded-full icon-down text-bodydark border-bodydark2 fa-solid fa-angle-down"
+                ></i>
+              </div>
+              <div class="accordion-content hidden px-3 pb-2.5 lg:px-6 lg:pb-5">
+                <p class="text-sm md:text-base">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Reiciendis nihil enim iure blanditiis laboriosam expedita,
+                  eius aspernatur obcaecati dicta nobis quasi? Veritatis minus
+                  repellat soluta minima cumque hic molestias aliquam id
+                  laudantium doloremque non, quaerat corrupti quidem facilis
+                  iste quos?
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 3 -->
+            <div class="flex flex-col gap-4 cursor-pointer accordion-container">
+              <div
+                class="accordion-header flex items-center justify-between px-3 py-2.5 lg:px-6 lg:py-5"
+              >
+                <p
+                  class="text-sm font-bold text-bodydark md:text-sm lg:text-base"
+                >
+                  Kenapa harus memilih Destinize?
+                </p>
+                <i
+                  class="p-2 border-2 rounded-full icon-down text-bodydark border-bodydark2 fa-solid fa-angle-down"
+                ></i>
+              </div>
+              <div class="accordion-content hidden px-3 pb-2.5 lg:px-6 lg:pb-5">
+                <p class="text-sm md:text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  eveniet quam blanditiis quod explicabo facere non omnis
+                  similique? Fuga quia quam facilis repudiandae dolorem. Quae
+                  repellat quod exercitationem modi voluptatum nulla iure
+                  voluptatem placeat distinctio at! Ab voluptatem animi
+                  obcaecati impedit sed esse laudantium velit? Nihil amet
+                  officia accusantium praesentium libero architecto, minus sunt
+                  est quos nisi, et consectetur? Quisquam!
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 4 -->
+            <div class="flex flex-col gap-4 cursor-pointer accordion-container">
+              <div
+                class="accordion-header flex items-center justify-between px-3 py-2.5 lg:px-6 lg:py-5"
+              >
+                <p
+                  class="text-sm font-bold text-bodydark md:text-sm lg:text-base"
+                >
+                  Apakah Destinize akan bisa booking lokasi di luar Indonesia?
+                </p>
+                <i
+                  class="p-2 border-2 rounded-full icon-down text-bodydark border-bodydark2 fa-solid fa-angle-down"
+                ></i>
+              </div>
+              <div class="accordion-content hidden px-3 pb-2.5 lg:px-6 lg:pb-5">
+                <p class="text-sm md:text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  eveniet quam blanditiis quod explicabo facere non omnis
+                  similique? Fuga quia quam facilis repudiandae dolorem. Quae
+                  repellat quod exercitationem modi voluptatum nulla iure
+                  voluptatem placeat distinctio at! Ab voluptatem animi
+                  obcaecati impedit sed esse laudantium velit? Nihil amet
+                  officia accusantium praesentium libero architecto, minus sunt
+                  est quos nisi, et consectetur? Quisquam!
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 5 -->
+            <div class="flex flex-col gap-4 cursor-pointer accordion-container">
+              <div
+                class="accordion-header flex items-center justify-between px-3 py-2.5 lg:px-6 lg:py-5"
+              >
+                <p
+                  class="text-sm font-bold text-bodydark md:text-sm lg:text-base"
+                >
+                  Apa rekomendasi tempat buat orang yang jomblo?
+                </p>
+                <i
+                  class="p-2 border-2 rounded-full icon-down text-bodydark border-bodydark2 fa-solid fa-angle-down"
+                ></i>
+              </div>
+              <div class="accordion-content hidden px-3 pb-2.5 lg:px-6 lg:pb-5">
+                <p class="text-sm md:text-base">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Optio quia beatae est, ipsa odit omnis quae! Assumenda vel
+                  earum possimus cum soluta placeat cupiditate minima dolore
+                  nobis dolor? Error omnis officia doloribus tempore
+                  voluptatibus qui veritatis asperiores similique perferendis
+                  laudantium aliquam quod accusamus magnam atque, unde
+                  consequatur. Maiores, fugit repudiandae!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Recommendation Section -->
+      <section class="my-20 xl:my-28">
+        <div
+          class="flex flex-col items-center justify-between shadow-lg bg-violetblue rounded-2xl lg:flex-row"
+        >
+          <div
+            class="flex flex-col text-center gap-8 px-12 py-10 max-w-[558px] text-white lg:text-start"
+          >
+            <h2 class="text-2xl font-bold md:text-3xl lg:text-[40px]">
+              Masih bingung cari tempat yang cocok?
+            </h2>
+            <p>
+              Tenang, kami mempunyai fitur rekomendasi yang membantu kamu
+              mencari tempat berlibur yang tepat dengan menjawab pertanyaan yang
+              kami berikan.
+            </p>
+            <div>
+              <a
+                href=""
+                class="text-base font-bold transition hover:text-black md:text-lg lg:text-xl"
+                >Mulai Sekarang <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <img
+              src="public/img/main/illustration.png"
+              alt=""
+              class="block w-full rounded-b-2xl lg:rounded-r-2xl"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="px-[22px] py-3 xl:p-main xl:mx-auto">
+      <!-- Footer Container-->
+      <div class="grid grid-cols-1 text-sm gap-y-8 lg:grid-cols-2 lg:gap-y-0">
+        <!-- Footer Left -->
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col items-start gap-4 lg:max-w-[483px]">
+            <img src="public/img/main/logo_img.png" alt="" />
+            <p class="text-2xl font-bold">Destinize</p>
+            <p class="text-links">
+              Destinize adalah website atau layanan aplikasi yang membantu kamu
+              memilih atau merekomendasikan tempat yang dijuluki ‘hidden gems’
+              agar lebih dikenal dan ramai
+              <a href="#" class="font-bold text-mainblue">Baca Selengkapnya</a>
+            </p>
+          </div>
+          <div class="flex flex-col gap-5 text-links">
+            <span class="block"
+              ><i class="mr-1.5 fa-solid fa-phone"></i>0815-1920-1394</span
+            >
+            <span class="block"
+              ><i class="mr-1.5 fa-solid fa-envelope"></i
+              >aksuklakson@gmail.com</span
+            >
+            <span class="block"
+              ><i class="mr-1.5 fa-solid fa-location-dot"></i>Bandar Lampung,
+              Lampung, Indonesia</span
+            >
+            <span class="block"
+              ><i class="mr-1.5 fa-solid fa-print"></i>+1-212-9876543</span
+            >
+          </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="flex justify-between text-links">
+          <div class="flex flex-col gap-3 lg:gap-5">
+            <p class="text-base font-bold text-black lg:text-lg">Tentang</p>
+            <a href="#" class="block hover:text-mainblue">Tentang Kami</a>
+            <a href="#" class="block hover:text-mainblue">Blog</a>
+            <a href="#" class="block hover:text-mainblue">Karir</a>
+            <a href="#" class="block hover:text-mainblue">Pekerjaan</a>
+            <a href="#" class="block hover:text-mainblue">Berita</a>
+            <a href="#" class="block hover:text-mainblue">Galeri</a>
+            <a href="#" class="block hover:text-mainblue">Afilaisi</a>
+          </div>
+          <div class="flex flex-col gap-3 lg:gap-5">
+            <p class="text-base font-bold text-black lg:text-lg">Support</p>
+            <a href="#" class="block hover:text-mainblue">Kontak Kami</a>
+            <a href="#" class="block hover:text-mainblue">Online Chat</a>
+            <a href="#" class="block hover:text-mainblue">Whatsapp</a>
+            <a href="#" class="block hover:text-mainblue">Telegram</a>
+            <a href="#" class="block hover:text-mainblue">Tiket</a>
+            <a href="#" class="block hover:text-mainblue">Call Center</a>
+            <a href="#" class="block hover:text-mainblue">Bantuan</a>
+          </div>
+          <div class="flex flex-col gap-3 lg:gap-5">
+            <p class="text-base font-bold text-black lg:text-lg">FAQ</p>
+            <a href="#" class="block hover:text-mainblue">Akun</a>
+            <a href="#" class="block hover:text-mainblue">Organisir</a>
+            <a href="#" class="block hover:text-mainblue">Order</a>
+            <a href="#" class="block hover:text-mainblue">pembayaran</a>
+            <a href="#" class="block hover:text-mainblue">Pengembalian</a>
+            <a href="#" class="block hover:text-mainblue">Copyright</a>
+            <a href="#" class="block hover:text-mainblue">Bahasa</a>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="mt-7 lg:col-span-2">
+          <div class="flex flex-col justify-between gap-3 lg:flex-row">
+            <div>© 2021-2022, All Rights Reserved</div>
+            <div class="flex flex-col justify-between gap-3 lg:flex-row">
+              <a href="#" class="hover:text-mainblue">Tentang Kami</a>
+              <a href="#" class="hover:text-mainblue">Kontak</a>
+              <a href="#" class="hover:text-mainblue">Privacy & Policy</a>
+              <a href="#" class="hover:text-mainblue">Sitemap</a>
+              <a href="#" class="hover:text-mainblue">Panduan Penggunaan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="public/script.js"></script>
+  </body>
+</html>
