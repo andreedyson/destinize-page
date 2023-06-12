@@ -18,8 +18,7 @@ module.exports = {
         'body': '#5E6282',
         'bodydark': '#252B42',
         'bodydark2': '#d3d3d3',
-        'iconbox': '#EFE0B4',
-        'iconbox2': '#EFF2F6'
+        'iconbox': '#EFE0B4
       },
       padding: {
         'main': '22px 120px'
